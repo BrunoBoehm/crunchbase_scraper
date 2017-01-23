@@ -22,9 +22,11 @@ class CrunchbaseScraper::CLI
 			if input == "list"
 				list_companies
 			elsif input.to_i == 0
-				puts "more info thanks to company name"
+				puts "More info thanks to company name"
 			elsif input.to_i > 0
-				puts "more info thanks to company number"
+				puts "More info thanks to company number"
+			else 
+				puts "Cannot find this, try something else, list all companies or exit."	
 			end			
 		end
 		puts "Goodbye!"
