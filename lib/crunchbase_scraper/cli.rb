@@ -25,10 +25,11 @@ class CrunchbaseScraper::CLI
 			if input == "list"
 				list_companies
 			elsif input.to_i == 0
-				puts "More info thanks to company name"
+				company = @companies.select{ |company| company.name.downcase == input }.first.scrape_company
+				puts "#{company.name} - #{company.place} - #{company.description} - #{company.size} - #{company.tags} - #{company.website}"
 			elsif input.to_i > 0
-				company = @companies[input.to_i - 1]
-				puts "#{company.name} - #{company.place} - #{company.description} - #{company.rank} - #{company.url}"
+				company = @companies[input.to_i - 1].scrape_company
+				puts "#{company.name} - #{company.place} - #{company.description} - #{company.size} - #{company.tags} - #{company.website}"
 			else 
 				puts "Cannot find this, try something else, list all companies or exit."	
 			end			

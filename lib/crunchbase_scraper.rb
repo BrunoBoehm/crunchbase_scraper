@@ -2,6 +2,7 @@
 require 'open-uri'
 # part of the standard lib, no need to add to gemspec
 require 'nokogiri'
+require 'restclient'
 require 'pry'
 #we'll have to take out the pry require statement when publishing since we only want that dependency for development.
 
