@@ -9,6 +9,9 @@ class CrunchbaseScraper::CLI
 
 	def list_companies
 		@companies = CrunchbaseScraper::Company.all
+		@companies.each.with_index(1) do |company, index|
+			puts "#{index}. #{company.name} - #{company.place} - #{company.description} - #{company.rank} - #{company.url}"
+		end
 	end
 
 	def menu
@@ -24,7 +27,8 @@ class CrunchbaseScraper::CLI
 			elsif input.to_i == 0
 				puts "More info thanks to company name"
 			elsif input.to_i > 0
-				puts "More info thanks to company number"
+				company = @companies[input.to_i - 1]
+				puts "#{company.name} - #{company.place} - #{company.description} - #{company.rank} - #{company.url}"
 			else 
 				puts "Cannot find this, try something else, list all companies or exit."	
 			end			
