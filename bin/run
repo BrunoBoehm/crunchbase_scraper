@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
-require_relative '../lib/crunchbase_scraper'
+require "bundler/setup"
+require "crunchbase_scraper"
+# require_relative '../lib/crunchbase_scraper'
 
 CrunchbaseScraper::CLI.new.call

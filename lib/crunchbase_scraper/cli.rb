@@ -14,9 +14,11 @@ class CrunchbaseScraper::CLI
 	def menu
 		input = nil
 		while input != "exit"
-			puts ""
+			# starts the loop and gets input
 			puts "Type the company number to get more info, list to see the list again, or exit:"
-			input = gets.strip
+			input = gets.strip.downcase
+
+			# from the input know what to do
 			if input == "list"
 				list_companies
 			elsif input.to_i == 0
