@@ -8,10 +8,7 @@ class CrunchbaseScraper::CLI
 	end
 
 	def list_companies
-		puts <<-DOC.gsub(/^\s*/, '')
-			1. Facebook - Menlo Park, California, United States - Facebook is an online social networking service... - #1
-			2. Alibaba - Hangzhou, Zhejiang, China - Alibaba is a Chinese e-commerce company operating online... - #2
-		DOC
+		@companies = CrunchbaseScraper::Company.all
 	end
 
 	def menu

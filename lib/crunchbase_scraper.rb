@@ -2,3 +2,4 @@
 
 require_relative "./crunchbase_scraper/version"
 require_relative "./crunchbase_scraper/cli"
+require_relative "./crunchbase_scraper/company"
