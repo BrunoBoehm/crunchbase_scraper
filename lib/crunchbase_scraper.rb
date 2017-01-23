@@ -1,5 +1,4 @@
-require "crunchbase_scraper/version"
+# this acts as our config.rb file
 
-module CrunchbaseScraper
-  # Your code goes here...
-end
+require_relative "./crunchbase_scraper/version"
+require_relative "./crunchbase_scraper/cli"
