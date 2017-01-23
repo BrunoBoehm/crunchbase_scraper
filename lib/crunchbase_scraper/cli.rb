@@ -10,7 +10,7 @@ class CrunchbaseScraper::CLI
 	def list_companies
 		@companies = CrunchbaseScraper::Company.all
 		@companies.each.with_index(1) do |company, index|
-			puts "#{index}. #{company.name} - #{company.place} - #{company.description} - #{company.rank} - #{company.url}"
+			puts "#{index}. #{company.name} - #{company.type}"
 		end
 	end
 
