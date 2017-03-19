@@ -13,6 +13,16 @@ class CrunchbaseScraper::Company
 		html = open("https://angel.co/search?q=travel")
 		# html = RestClient.get("https://www.crunchbase.com/organization/apple")
 		# RestClient::RangeNotSatisfiable: 416 Range Not Satisfiable
+
+		# <h1>Pardon Our Interruption...</h1><p>As you were browsing <strong>http://www.crunchbase.com</strong> something about your browser made us think you were a bot. There are a few reasons this might happen:</p><ul>
+		# <li>You're a power user moving through this website with super-human speed.</li>
+		# <li>You've disabled JavaScript in your web browser.</li>
+		# <li>A third-party browser plugin, such as Ghostery or  NoScript, is preventing JavaScript from running. Additional information is available in this <a title='Third party browser plugins that block javascript' href='http://ds.tl/help-third-party-plugins' target='_blank'>support article</a>.</li>
+		# </ul>
+		# <p>To request an unblock, please fill out the form below and we will review it as soon as possible.
+		# You reached this page when attempting to access http://www.crunchbase.com/organization/apple from 213.55.176.146 on 2017-01-24 14:31:48 GMT.
+		# https://www.distilnetworks.com/
+
 		doc = Nokogiri::HTML(html)
 		results = doc.css(".result")
 		results.each do |result|
