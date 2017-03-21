@@ -24,14 +24,17 @@ class CrunchbaseScraper::CLI
 			# from the input know what to do
 			if input == "list"
 				list_companies
-			elsif input.to_i == 0
+			# search by string	
+			elsif input.to_i == 0 && input != "exit"
 				company = @companies.select{ |company| company.name.downcase == input }.first.scrape_company
 				puts "#{company.name} - #{company.place} - #{company.description} - #{company.size} - #{company.tags} - #{company.website}"
+			# search by integer
 			elsif input.to_i > 0
 				company = @companies[input.to_i - 1].scrape_company
 				puts "#{company.name} - #{company.place} - #{company.description} - #{company.size} - #{company.tags} - #{company.website}"
+			# error handling
 			else 
-				puts "Cannot find this, try something else, list all companies or exit."	
+				puts "Cannot find this, try something else, list all companies or exit." unless input == "exit"	
 			end			
 		end
 		puts "Goodbye!"
